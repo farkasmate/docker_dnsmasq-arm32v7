@@ -6,4 +6,4 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 EXPOSE 67/udp 69/udp 4011/udp
-ENTRYPOINT ["/usr/sbin/dnsmasq", "--conf-file=/etc/dnsmasq.conf", "--keep-in-foreground"]
+ENTRYPOINT ["/usr/sbin/dnsmasq", "--conf-file=/etc/dnsmasq.conf", "--no-daemon"]
