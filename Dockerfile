@@ -5,5 +5,5 @@ RUN apt-get update \
     dnsmasq \
   && rm -rf /var/lib/apt/lists/*
 
-# FIXME
-ENTRYPOINT ["/bin/bash"]
+EXPOSE 67/udp 69/udp 4011/udp
+ENTRYPOINT ["/usr/sbin/dnsmasq", "--conf-file=/etc/dnsmasq.conf", "--keep-in-foreground"]
